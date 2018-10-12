@@ -1,0 +1,41 @@
+{
+  "scripts": {
+    "dev-server": "yarn run clean && yarn run copy-static && webpack-dev-server",
+    "build-prod": "yarn run clean && yarn run copy-static && webpack -p",
+    "copy-static": "copyfiles -u 2 \"src/static/*\" dist",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "deepmerge": "^1.5.2",
+    "file-loader": "^1.1.6",
+    "group-array": "^0.3.3",
+    "lodash": "^4.1.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "svg-inline-loader": "^0.8.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.1",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "copyfiles": "^1.2.0",
+    "css-loader": "^0.28.8",
+    "eslint": "^4.15.0",
+    "eslint-plugin-react": "^7.5.1",
+    "prop-types": "^15.6.0",
+    "rimraf": "^2.6.2",
+    "style-loader": "^0.19.1",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.0"
+  }
+}
