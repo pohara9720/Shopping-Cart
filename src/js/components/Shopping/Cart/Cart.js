@@ -64,29 +64,31 @@ class Cart extends Component{
                 </div>
             </div>
             <div className='row'>
-                <div className={styles.list}>
-                    {   this.props.cart.length === 0 ?
-                        <h1>There are no items</h1> 
-                        :
-                        this.state.grouped.map((p,i) => 
+                <div className={styles.arrange}>
+                    <div className={styles.list}>
+                        {   this.props.cart.length === 0 ?
+                            <h1>There are no items</h1> 
+                            :
+                            this.state.grouped.map((p,i) => 
 
-                            <Item 
-                                key={i} 
-                                button={() => this.remove(p[0])} 
-                                add={false} 
-                                name={`${p[0]} x ${p[1].length}`} 
-                                price={p[1].length * p[1][0].price}
-                            />
-                                )
+                                <Item 
+                                    key={i} 
+                                    button={() => this.remove(p[0])} 
+                                    add={false} 
+                                    name={`${p[0]} x ${p[1].length}`} 
+                                    price={p[1].length * p[1][0].price}
+                                />
+                                    )
+                        }
+                    </div>
+                    {
+                        this.props.cart.length === 0 ? null :
+                        <div className={styles.total}>
+                            <label>Total</label>
+                            <h1>{`$${total.toFixed(2)}`}</h1>
+                        </div>
                     }
                 </div>
-                {
-                    this.props.cart.length === 0 ? null :
-                    <div className={styles.total}>
-                        <label>Total</label>
-                        <h1>{`$${total.toFixed(2)}`}</h1>
-                    </div>
-                }
             </div>
             <Link to='/' className={styles.productButton}>View Products</Link>
         </div>

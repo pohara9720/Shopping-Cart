@@ -12,6 +12,13 @@
 	width: 100%;
 	padding-top: 10%;
 }
+.arrange{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
 .heading h1{
 	color: #a020f0;
 	font-weight: bold;
